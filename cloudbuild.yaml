@@ -59,6 +59,11 @@ steps:
           --image "$$IMAGE" \
           --region ${_REGION} \
           --platform managed \
-          --allow-unauthenticated
+          --allow-unauthenticated \
+          --port=8080 \
+          --set-env-vars=DB_KIND=mysql,DB_SCHEMA_STRATEGY=update,FIREBASE_SERVICE_ACCOUNT_LOCATION=/secrets/firebase.json \
+          --set-env-vars=DB_JDBC_URL='jdbc:mysql:///todoDB?cloudSqlInstance=todo-494222:us-central1:free-trial-first-project&socketFactory=com.google.cloud.sql.mysql.SocketFactory' \
+          --set-secrets=DB_PASSWORD=db-password:latest \
+          --set-secrets=/secrets/firebase.json=firebase-service-account:latest
 
 timeout: 1800s
