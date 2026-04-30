@@ -12,10 +12,10 @@
 
 substitutions:
   _REGION: us-central1
-  _REPOSITORY: backendgrupo2
+  _REPOSITORY: hello-world-repo
   _IMAGE: backend
   _SERVICE: backendgrupo2
-  _PROJECT_ID: tc3005b-494022
+  _PROJECT_ID: todo-494222
 
 options:
   logging: CLOUD_LOGGING_ONLY
